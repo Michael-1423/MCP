@@ -26,7 +26,7 @@ class MCPClient:
         self.exit_stack = AsyncExitStack() 
         # # self.anthropic = Anthropic() 
         # # methods will go here 
-        print(os.getenv("API_KEY"))
+        # print(os.getenv("API_KEY"))
         self.client = genai.Client(api_key=os.getenv("API_KEY"))
 
     async def connect_to_server(self, server_script_path: str): 
@@ -283,8 +283,8 @@ async def main():
         
     client = MCPClient() 
     # try: 
-    await client.connect_to_server(server_script_path="server.py") 
-    await client.process_query("what is the sum of 5 and 6?")
+    await client.connect_to_server(server_script_path="github_server.py") 
+    # await client.process_query("what is the sum of 5 and 6?")
         # await client.chat_loop() 
     
     # except Exception as e: 
